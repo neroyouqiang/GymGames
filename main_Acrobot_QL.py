@@ -2,16 +2,16 @@ import pickle
 import time
 import gym
 
-from models.QLearn import QLearn
+from models.DQN import DQN
 
 if __name__ == '__main__':
     env = gym.make('Acrobot-v1').unwrapped
 
-    RL = QLearn(i=6, o=3, h1=512, h2=128,
-                isinit=False, save_file='saves/Acrobot/params/ql.pkl',
-                hyperparam={'learn_rate': 1e-3, # lr=1e-3 for training
-                            'weight_decay': 1e-5,
-                            'reward_decay': 0.01})
+    RL = DQN(i=6, o=3, h1=512, h2=128,
+             isinit=False, save_file='saves/Acrobot/params/ql.pkl',
+             hyperparam={'learn_rate': 1e-3, # lr=1e-3 for training
+                         'weight_decay': 1e-5,
+                         'reward_decay': 0.01})
 
     scores = []
     for ii in range(1000000):

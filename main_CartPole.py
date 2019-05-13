@@ -2,16 +2,16 @@ import pickle
 import time
 import gym
 
-from models.QLearn import QLearn
+from models.DQN import DQN
 
 if __name__ == '__main__':
     env = gym.make('CartPole-v0').unwrapped
 
-    RL = QLearn(i=4, o=2, h1=512, h2=128,
-                isinit=False, save_file='saves/CartPole/params/ql.pkl',
-                hyperparam={'learn_rate': 1e-4, # lr=1e-3 for training
-                            'weight_decay': 1e-5,
-                            'reward_decay': 0.1})
+    RL = DQN(i=4, o=2, h1=512, h2=128,
+             isinit=False, save_file='saves/CartPole/params/ql.pkl',
+             hyperparam={'learn_rate': 1e-4, # lr=1e-3 for training
+                         'weight_decay': 1e-5,
+                         'reward_decay': 0.1})
     data1 = []
     data2 = []
     scores = []

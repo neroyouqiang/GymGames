@@ -32,7 +32,7 @@ class MyModel(nn.Module):
     """
 
 
-class QLearn:
+class DQN:
     """
     Q learning by neural network
     """
